@@ -68,6 +68,16 @@ class LinkedList {
     }
     return false;
   }
+
+  print() {
+    let current = this.head;
+    let result = "";
+    while (current) {
+      result += "[" + current.value + "] -> ";
+      current = current.next;
+    }
+    console.log(result + "NULL");
+  }
 }
 
 const list = new LinkedList();
@@ -78,3 +88,4 @@ list.append(30);
 list.append(40);
 list.delete(20);
 console.log(list.search(40));
+list.print();
