@@ -59,6 +59,15 @@ class LinkedList {
       this.size--;
     }
   }
+
+  search(value) {
+    let current = this.head;
+    while (current) {
+      if (current.value === value) return true;
+      current = current.next;
+    }
+    return false;
+  }
 }
 
 const list = new LinkedList();
@@ -67,6 +76,5 @@ list.prepend(9);
 list.append(20);
 list.append(30);
 list.append(40);
-console.log(list.size);
 list.delete(20);
-console.log(list.size);
+console.log(list.search(40));
