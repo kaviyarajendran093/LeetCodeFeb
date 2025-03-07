@@ -39,11 +39,34 @@ class LinkedList {
   }
 
   //Delete the value
-  delete(value) {}
+  delete(value) {
+    if (!this.head) return;
+
+    if (this.head.value === value) {
+      this.head = this.head.next;
+      this.size--;
+      return;
+    }
+
+    let current = this.head;
+    while (current.next && current.next.value !== value) {
+      current = current.next;
+    }
+
+    if (current.next) {
+      current.next = current.next.next;
+      if (!current.next) this.tail = current;
+      this.size--;
+    }
+  }
 }
 
 const list = new LinkedList();
 list.append(10);
 list.prepend(9);
-
-console.log(list);
+list.append(20);
+list.append(30);
+list.append(40);
+console.log(list.size);
+list.delete(20);
+console.log(list.size);
