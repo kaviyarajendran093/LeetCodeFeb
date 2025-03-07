@@ -1,0 +1,49 @@
+/* Singly LinkedList */
+//Node Structure which stores data and reference to next node
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+//Implement the LinkedList class
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  append(value) {
+    const newNode = new Node(value);
+
+    //Add value at the last
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.size++;
+  }
+
+  //Add value at the beginning
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    if (!this.tail) this.tail = newNode;
+    this.size++;
+  }
+
+  //Delete the value
+  delete(value) {}
+}
+
+const list = new LinkedList();
+list.append(10);
+list.prepend(9);
+
+console.log(list);
