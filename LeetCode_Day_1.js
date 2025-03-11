@@ -52,7 +52,7 @@ function removeElementByTwoPointer(nums, val) {
 }
 
 //Leetcode solution
-function removeElement(nums, val) {
+function removeElementLeetcode(nums, val) {
   let index = 0; // Pointer to track position for valid elements
 
   for (let i = 0; i < nums.length; i++) {
@@ -62,9 +62,14 @@ function removeElement(nums, val) {
     }
   }
 
-  return index; // Returns count of elements not equal to val
+  // Fill the remaining part of the array with "_"
+  for (let i = index; i < nums.length; i++) {
+    nums[i] = "_";
+  }
+
+  return index + ", nums = [" + nums + "]"; // Returns count of elements not equal to val
 }
 
-console.log(removeElementByTwoPointer([0, 1, 2, 2, 3, 0, 4, 2], 2));
+console.log(removeElementLeetcode([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
 //console.log(removeElementByTwoPointer([3, 2, 2, 3], 3));
