@@ -70,6 +70,8 @@ function removeElementLeetcode(nums, val) {
   return index + ", nums = [" + nums + "]"; // Returns count of elements not equal to val
 }
 
-console.log(removeElementLeetcode([0, 1, 2, 2, 3, 0, 4, 2], 2));
+//console.log(removeElementLeetcode([0, 1, 2, 2, 3, 0, 4, 2], 2));
 
 //console.log(removeElementByTwoPointer([3, 2, 2, 3], 3));
+
+function moveValToLast(nums, val) {}
